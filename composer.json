@@ -1,0 +1,15 @@
+{
+    "name": "messiasmartins/food-front",
+    "autoload": {
+        "psr-4": {
+            "Messiasmartins\\FoodFront\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Messias Martins",
+            "email": "messiasmartins@outlook.com"
+        }
+    ],
+    "require": {}
+}
