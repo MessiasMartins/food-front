@@ -12,6 +12,8 @@
 
 
     <script src="src/assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="src/assets/js/jquery-3.6.1.js"></script>
+    <script src="src/js/produtos.js"></script>
 
 
 </body>
