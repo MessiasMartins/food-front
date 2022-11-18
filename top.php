@@ -13,6 +13,8 @@
 
     <link href="src/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <script src="src/js/functions/funcoes_gerais.js"></script>
+
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;

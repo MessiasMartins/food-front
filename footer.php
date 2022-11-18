@@ -15,6 +15,9 @@
     <script src="src/assets/js/jquery-3.6.1.js"></script>
     <script src="src/js/produtos.js"></script>
     <script src="src/js/produto.js"></script>
+    <script>
+        //revalidarToken($('#configToken').val())
+    </script>
 
 
 </body>

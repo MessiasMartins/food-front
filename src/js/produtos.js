@@ -20,20 +20,28 @@
 //})
 
 function carregarTabela(){
+    const url = "http://127.0.0.1:8000/api/product";
+    const dados = apiAjax(url, [], 'GET');
 
-    $.ajax({
-        url: prefix + "api/product",
-        beforeSend: function(){
-            $('#spin').show()
-        },
-        success: function(result){
-            preencheTabela(result)
-        },
-        error: (error) => {
+    if(dados){
+        preencheTabela(dados)
+    }
 
-        },
-        complete: function(result){
-            $('#spin').hide()
-        }
-    });
+    console.log(dados);
+
+//    $.ajax({
+//        url: prefix + "api/product",
+//       beforeSend: function(){
+//            $('#spin').show()
+//        },
+//        success: function(result){
+//            preencheTabela(result)
+//        },
+//        error: (error) => {
+
+//       },
+//        complete: function(result){
+//            $('#spin').hide()
+//        }
+//    });
 }
