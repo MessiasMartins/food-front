@@ -13,5 +13,26 @@ $('#btn-login').click(function(){
 
     const result = apiAjax(url, data, 'POST')
 
-    console.log(result)
+    if (result.status === "success"){
+        const config = {
+            name: result.user.name,
+            login: result.user.login,
+            email: result.user.email,
+            token: result.authorisation.token,
+        }
+
+        localStorage.setItem('food-front', JSON.stringify(config))
+
+        const urlPHP = "http://localhost/food-front/src/php/login.php"
+
+        const resultPHP = JSON.parse(apiAjax(urlPHP, config, 'POST'))
+
+        if (resultPHP.status === 'success'){
+            window.location.href = "./index.php";
+        }else{
+            ////////////////error
+        }
+    }else{
+        //////////erro
+    }
 })

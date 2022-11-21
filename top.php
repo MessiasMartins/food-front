@@ -73,6 +73,11 @@
 
 <body>
 
+<input type="hidden" id="apiToken" value="<?php echo $_SESSION['token']?>">
+<input type="hidden" id="apiName" value="<?php echo $_SESSION['name']?>">
+<input type="hidden" id="apiLogin" value="<?php echo $_SESSION['login']?>">
+<input type="hidden" id="apiEmail" value="<?php echo $_SESSION['email']?>">
+
     <header>
         <div class="collapse bg-dark" id="navbarHeader">
             <div class="container">
@@ -86,7 +91,7 @@
                         <ul class="list-unstyled">
                             <li><a href="#" class="text-white">Follow on Twitter</a></li>
                             <li><a href="#" class="text-white">Like on Facebook</a></li>
-                            <li><a href="#" class="text-white">Email me</a></li>
+                            <li><a href="#" class="text-white"><?php echo $_SESSION['email']?></a></li>
                         </ul>
                     </div>
                 </div>

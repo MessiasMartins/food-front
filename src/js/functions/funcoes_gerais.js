@@ -93,3 +93,8 @@ function revalidarToken(token) {
     })
     return response;
 }
+
+function getLogin(){
+    const valores = localStorage.getItem('food-front')
+    return JSON.parse(valores)
+}
