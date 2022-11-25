@@ -16,7 +16,9 @@
     <script src="src/js/produtos.js"></script>
     <script src="src/js/produto.js"></script>
     <script>
-        //revalidarToken($('#configToken').val())
+        const tokenStorage = localStorage.getItem('token')
+        $('#configToken').val(tokenStorage.token)
+        revalidarToken($('#configToken').val())
     </script>
 
 

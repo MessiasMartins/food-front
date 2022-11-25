@@ -21,7 +21,7 @@ $('#btn-login').click(function(){
             token: result.authorisation.token,
         }
 
-        localStorage.setItem('food-front', JSON.stringify(config))
+        localStorage.setItem('token', result.authorisation.token)
 
         const urlPHP = "http://localhost/food-front/src/php/login.php"
 

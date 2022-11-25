@@ -73,10 +73,11 @@
 
 <body>
 
-<input type="hidden" id="apiToken" value="<?php echo $_SESSION['token']?>">
+<input type="hidden" id="configToken" value="<?php echo $_SESSION['token']?>">
 <input type="hidden" id="apiName" value="<?php echo $_SESSION['name']?>">
 <input type="hidden" id="apiLogin" value="<?php echo $_SESSION['login']?>">
 <input type="hidden" id="apiEmail" value="<?php echo $_SESSION['email']?>">
+<input type="hidden" id="configServidor" value="http://127.0.0.1:8000/api/">
 
     <header>
         <div class="collapse bg-dark" id="navbarHeader">

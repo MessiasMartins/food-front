@@ -20,8 +20,8 @@
 //})
 
 function carregarTabela(){
-    const url = "http://127.0.0.1:8000/api/product";
-    const dados = apiAjax(url, [], 'GET');
+    const url = $('#configServidor').val()+"product";
+    const dados = apiAjax(url, [], 'GET', $('#configToken').val());
 
     if(dados){
         preencheTabela(dados)

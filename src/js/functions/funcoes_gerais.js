@@ -62,7 +62,8 @@ function apiAjax(url, data = {}, method = 'POST', token, refresh = false) {
 function revalidarToken(token) {
     let hostApi = $('#configServidor').val();
     let response = new Array();
-    let url = location.protocol + '//' + hostApi + `/api/acesso/refresh`;
+    let url = hostApi + `/api/refresh`;
+
     $.ajax({
         type: 'POST',
         async: false,
@@ -74,18 +75,22 @@ function revalidarToken(token) {
         url: url,
         success: function (resposta) {
             response = resposta;
-            document.cookie = document.cookie.trim();
-            document.cookie = 'token=' + resposta.token;
-            let token = document.cookie.split(';').find(indice => {
-                return indice.trim().startsWith('token=')
-            })
-            if(!token){
-                token = document.cookie.split(';').find(indice => {
-                    return indice.startsWith(' token=')
-                })
-            }
-            token = token.split('=');
-            $('#configToken').val(token[1])
+
+            $('#configToken').val(resposta.authorization.token)
+            localStorage.setItem('token', resposta.authorization.token)
+
+//            document.cookie = document.cookie.trim();
+//            document.cookie = 'token=' + resposta.token;
+//            let token = document.cookie.split(';').find(indice => {
+//                return indice.trim().startsWith('token=')
+//            })
+//            if(!token){
+//                token = document.cookie.split(';').find(indice => {
+//                    return indice.startsWith(' token=')
+//                })
+//            }
+//            token = token.split('=');
+//            $('#configToken').val(token[1])
         },
         error: function (XMLHttpRequest, textStatus, errorThrown, error) {
             window.location.href = './php/logout.php'
